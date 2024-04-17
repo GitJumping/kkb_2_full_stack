@@ -1,5 +1,6 @@
 .DS_Store
 ./*/node_modules/
+./ajk_server/node_modules/
 ./*/dist/
 npm-debug.log*
 yarn-debug.log*
@@ -11,6 +12,7 @@ selenium-debug.log
 # Editor directories and files
 .idea
 .vscode
+.iml
 *.suo
 *.ntvs*
 *.njsproj

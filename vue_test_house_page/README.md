@@ -28,6 +28,9 @@ npm test
 ```
 
 ``` bash
+# 先install
+yarn install
+
 # 安装 axios
 yarn add axios@1.5.0 -D
 

@@ -28,6 +28,9 @@ npm test
 ```
 
 ``` bash
+# 先install
+yarn install
+
 # 用yarn来管理的，serve with hot reload at localhost:8080
 yarn run start
 ```
