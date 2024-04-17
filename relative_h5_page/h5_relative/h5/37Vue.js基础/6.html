@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../js/vue.js"></script>
+  <script>
+    window.onload = function () {
+      let vm = new Vue({
+        el: '#div1',
+        data: {
+          voncount: 0,
+          atcount: 0,
+          color: '',
+          array: ['a', 'b', 'c'],
+          a: 'alert(1)',
+          //b: 'fnclick'
+        },
+        methods: {
+          fnclick(){
+            this.voncount++;
+            //alert('abc');
+          },
+          atclick(){
+            this.atcount++;
+            //alert('abc');
+          }
+        }
+      });
+    };
+  </script>
+</head>
+<body>
+  <div id="div1">
+    <input type="text" v-model="color" :class="array"/><br/>
+    <input type="text" :onClick="a"/><br/>
+    {{voncount}}<br>
+    <input type="text" v-on:click="fnclick"/>
+    {{atcount}}<br>
+    <input type="text" @click="atclick"/>
+  </div>
+</body>
+</html>

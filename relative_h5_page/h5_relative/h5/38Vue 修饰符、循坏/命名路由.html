@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .nav-link {color:#333; text-decoration:none;}
+    .router-link-active {font-weight:bold;}
+  </style>
+  <script src="../../js/vue.js"></script>
+  <script src="../../js/vue-router.js"></script>
+  <script>
+    window.onload = function () {
+
+      let route = new VueRouter({
+        routes: [
+          {
+            path: '/user',
+            component: {template: '<div><h4>用户</h4><router-view></router-view></div>'},
+            children: [
+              {
+                path: 'info/:id',
+                name: 'i',
+                component: {template: '<span>用户信息</span>'},
+              },
+              {
+                path: 'avatar',
+                component: {template: '<span>头像</span>'},
+              },
+            ]
+          },
+          {
+            path: '/company',
+            component: {template: '<div><h4>公司</h4><router-view></router-view></div>'},
+            children: [
+              {
+                path: 'update',
+                name: 'u',
+                component: {template: '<div>修改公司信息</div>'},
+              },
+              {
+                path: 'show',
+                component: {template: '<div>显示</div>'},
+              }
+            ]
+          }
+        ]
+      });
+
+      let vm = new Vue({
+        el: '#div',
+        router: route,
+      });
+    };
+  </script>
+</head>
+<body>
+<div id="div">
+  <router-link :to="{name: 'i', params:{id: 3}}">用户信息</router-link>
+  <router-link to="/user/avatar">用户头像</router-link>
+  <router-link :to="{name: 'u', params:{id: 3}}">修改公司信息</router-link>
+  <router-link to="/company/show">显示公司信息</router-link>
+  <router-view></router-view>
+</div>
+</body>
+</html>
