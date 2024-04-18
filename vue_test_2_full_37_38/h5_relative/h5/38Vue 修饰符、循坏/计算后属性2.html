@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+  <script src="../../js/vue.js"></script>
+  <script>
+    window.onload = function () {
+      let vm = new Vue({
+        el: '#div',
+        data: {
+          family: '',
+          last: ''
+        },
+        methods: {
+          //理论可以用，但是问题很多
+          // calculatem(){
+          //   return this.n1*this.n2;
+          // }
+        },
+        //data 里的属性，会盖掉 computed 里的属性
+        computed: {
+          //有缓存
+          calculateName: {
+            get: function () {
+              return this.family+this.last;
+            },
+            set: function (val) {
+              this.family = val.charAt(0);
+              this.last = val.substring(1);
+            },
+          }
+        }
+      });
+    };
+  </script>
+</head>
+<body>
+<div id="div">
+  <input type="text" v-model="family"/><br/>
+  <input type="text" v-model="last"/><br/>
+  {{calculateName}}<br/>
+  <input type="text" v-model="calculateName"><br/>
+</div>
+</body>
+</html>

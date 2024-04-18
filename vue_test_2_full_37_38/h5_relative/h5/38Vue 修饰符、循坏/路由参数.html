@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .nav-link {color:#333; text-decoration:none;}
+    .router-link-active {font-weight:bold;}
+  </style>
+  <script src="../../js/vue.js"></script>
+  <script src="../../js/vue-router.js"></script>
+  <script>
+    window.onload = function () {
+
+      let route = new VueRouter({
+        routes: [
+          {
+            path: '/artical/:id',
+            component: {
+              template: '<div>文章ID {{$route.params.id}}</div>'
+          }}
+        ]
+      });
+
+      let vm = new Vue({
+        el: '#div',
+router: route
+      });
+    };
+  </script>
+</head>
+<body>
+<div id="div">
+  <router-link to="/artical/1">文章1</router-link>
+  <router-link to="/artical/23">文章2</router-link>
+  <router-link to="/artical/45">文章3</router-link>
+  <router-view></router-view>
+</div>
+</body>
+</html>

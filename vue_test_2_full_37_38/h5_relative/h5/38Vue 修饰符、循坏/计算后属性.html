@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+  <script src="../../js/vue.js"></script>
+  <script>
+    window.onload = function () {
+      let vm = new Vue({
+        el: '#div',
+        data: {
+          n1: 0,
+          n2: 0
+        },
+        methods: {
+          //理论可以用，但是问题很多
+          calculatem(){
+            return this.n1*this.n2;
+          }
+        },
+        computed: {
+          //有缓存
+          calculate: function () {
+            return this.n1*this.n2;
+          },
+        }
+      });
+    };
+  </script>
+</head>
+<body>
+<div id="div">
+  <input type="text" v-model="n1"/>
+  <input type="text" v-model="n2"/>
+{{calculate}}<br/>
+  {{calculatem()}}<br/>
+</div>
+</body>
+</html>

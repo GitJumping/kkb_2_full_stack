@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../js/vue.js"></script>
+  <script>
+    window.onload = function () {
+      let vm = new Vue({
+        el: '#div1',
+        data: {
+          name: 'green'
+        },
+      });
+    };
+  </script>
+</head>
+<body>
+  <div id="div1">
+    name：{{name}}
+  </div>
+</body>
+</html>

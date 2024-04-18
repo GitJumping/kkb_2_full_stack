@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../js/vue.js"></script>
+  <script>
+    window.onload = function () {
+      let vm = new Vue({
+        el: '#div',
+        data: {
+          user: {
+            '1': {
+              name: 'zs', age:15
+            },
+            '02': {
+              name: 'ls', age:29
+            },
+            '003': {
+              name: 'ww', age:24
+            }
+          }
+        },
+      });
+    };
+  </script>
+</head>
+<body>
+<div id="div">
+  <ul>
+    <li id="tli1" v-for="i in user">{{i}}</li>
+  </ul>
+  <ul>
+    <li id="tli2" v-for="i in user">{{i.name}}， {{i.age}}</li>
+  </ul>
+  <ul>
+    <!--value key-->
+    <li id="tli3" v-for="item, i in user">
+      <i>{{i}}</i>&nbsp;&nbsp;&nbsp;&nbsp;{{item.name}}， {{item.age}}
+    </li>
+  </ul>
+
+  <ul>
+    <li v-for="item,index in user">
+      <i>{{index}}</i> 名字：{{item.name}}，年龄：{{item.age}}
+    </li>
+  </ul>
+</div>
+</body>
+</html>
