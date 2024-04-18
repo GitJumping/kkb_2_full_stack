@@ -16,6 +16,7 @@
 
 <script>
 import ListItem from '@/components/list_item'
+import axios from 'axios'
 
 export default {
   data () {
@@ -27,6 +28,13 @@ export default {
     ],
     count: 0
     }
+  },
+  mounted () {
+    axios.get(`http://localhost:8081/list`).then(res => {
+      console.log('list res', res)
+    }, error => {
+      console.log('list error', error)
+    })
   },
   components: {ListItem},
   methods: {

@@ -7,7 +7,7 @@
 ``` bash
 # yarn add koa koa-router url -D
 
-yarn add koa@2.4.1 koa-mysql@1.0.3 koa-router@7.3.0 url -D
+yarn add koa@2.4.1 koa-router@7.3.0 url -D
 
 # 执行
 node server.js 

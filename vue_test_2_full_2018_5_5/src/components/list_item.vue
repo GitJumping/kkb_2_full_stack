@@ -1,8 +1,9 @@
 <template lang="html">
   <div>
     <li>
-      <input type="checkbox" value="请选择" name="" v-model="checkeding">{{checkeding}}
-      {{ data.name }}--{{ data.price }}--{{ data.sales }}
+      <h3><input type="checkbox" value="请选择" name="" v-model="checkeding">{{ data.name }}</h3>
+      <span>￥{{ data.price }}</span>
+      <span>月售：{{ data.sales }}</span>
     </li>
   </div>
 </template>

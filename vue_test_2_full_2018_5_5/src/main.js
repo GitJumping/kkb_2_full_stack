@@ -3,8 +3,15 @@
 import Vue from 'vue'
 // import App from './App'
 import router from './router'
+// import axios from 'axios'
 
 Vue.config.productionTip = false
+
+// axios.get(`http://localhost:8081/list`).then(res => {
+//   console.log('res', res)
+// }, error => {
+//   console.log('error', error)
+// })
 
 /* eslint-disable no-new */
 new Vue({
