@@ -16,7 +16,7 @@
 
 <script>
 import ListItem from '@/components/list_item'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   data () {
@@ -29,12 +29,35 @@ export default {
     count: 0
     }
   },
-  mounted () {
-    axios.get(`http://localhost:8081/list`).then(res => {
+  async mounted () {
+    // 直接通过 axios 异步加载
+    /* axios.get(`http://localhost:8081/list`).then(res => {
       console.log('list res', res)
     }, error => {
       console.log('list error', error)
-    })
+    }) */
+    // Vue实例上挂载axios，异步加载
+    // console.log(this.ajax)
+    /* this.ajax(`http://localhost:8081/list`).then(res => {
+      console.log('list res', res)
+    }, error => {
+      console.log('list error', error)
+    }) */
+    // Vue实例上挂载axios，通过 Promise 方式获取
+    // let res = await this.ajax(`http://localhost:8081/list`)
+    // console.log('res', res)
+    try {
+      // await ajax() 返回的是一个Promise对象，Promise当然没有data属性
+      // let res = await this.ajax(`http://localhost:8081/list`).data
+      // console.log(res)
+      let res = (await this.ajax(`http://localhost:8081/list`)).data
+      console.log(res)
+      this.items = res
+    } catch (e) {
+      // 比如服务器没有启动，网络失败等异常
+      // 有await就要有try
+      alert('数据加载失败，请重试')
+    }
   },
   components: {ListItem},
   methods: {
