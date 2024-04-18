@@ -3,9 +3,11 @@
 import Vue from 'vue'
 // import App from './App'
 import router from './router'
+// 使用fetch请求，先注释掉
 import axios from 'axios'
 
 Vue.config.productionTip = false
+// 使用fetch请求，先注释掉
 Vue.prototype.ajax = axios
 
 // axios.get(`http://localhost:8081/list`).then(res => {

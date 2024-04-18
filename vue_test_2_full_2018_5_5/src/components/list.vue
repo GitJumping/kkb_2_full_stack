@@ -29,24 +29,40 @@ export default {
     count: 0
     }
   },
-  async mounted () {
-    // 直接通过 axios 异步加载
-    /* axios.get(`http://localhost:8081/list`).then(res => {
+  /*
+  mounnted () {
+    // 第一版
+    // 在 list.vue 子组件import axios，直接通过 axios 异步加载
+    axios.get(`http://localhost:8081/list`).then(res => {
       console.log('list res', res)
     }, error => {
       console.log('list error', error)
-    }) */
-    // Vue实例上挂载axios，异步加载
+    })
+  },
+   */
+  /*
+  mounted () {
+    // 第二版
+    // 先在main.js，在Vue 原型prototype上挂载axios，在 list.vue 用挂载变量来使用
     // console.log(this.ajax)
-    /* this.ajax(`http://localhost:8081/list`).then(res => {
+    this.ajax(`http://localhost:8081/list`).then(res => {
       console.log('list res', res)
     }, error => {
       console.log('list error', error)
-    }) */
-    // Vue实例上挂载axios，通过 Promise 方式获取
-    // let res = await this.ajax(`http://localhost:8081/list`)
-    // console.log('res', res)
+    })
+  },
+  */
+  // Vue实例上挂载axios，通过 Promise 方式获取，能取到
+  /*
+  async mounted () {
+    let res = await this.ajax(`http://localhost:8081/list`)
+    console.log('async mounted res', res)
+  },
+   */
+  /*
+  async mounted () {
     try {
+    // 第三版
       // await ajax() 返回的是一个Promise对象，Promise当然没有data属性
       // let res = await this.ajax(`http://localhost:8081/list`).data
       // console.log(res)
@@ -59,6 +75,9 @@ export default {
       alert('数据加载失败，请重试')
     }
   },
+   */
+  // 使用fetch请求数据
+  // },
   components: {ListItem},
   methods: {
     plusOne () {
