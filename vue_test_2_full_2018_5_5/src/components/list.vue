@@ -1,6 +1,7 @@
 <template lang="html">
   <div>
     <span style="font-size:30px;"></span>
+    {{state.count}}
     已选中：{{count}}件
     <ul>
 <!--      <ListItem str="qewd"/>-->
@@ -26,7 +27,8 @@ export default {
       {name: '7', price: '8', sales: '9'},
       {name: '10', price: '11', sales: '12'}
     ],
-    count: 0
+    count: 0,
+    state: this.$store.state
     }
   },
   /*
@@ -82,6 +84,7 @@ export default {
     let res = await (await fetch(`http://localhost:8081/list`)).json()
     console.log('fetch mounted', res)
     this.items = res
+    // console.log(this)
   },
   components: {ListItem},
   methods: {
@@ -90,6 +93,12 @@ export default {
     },
     minusOne () {
       this.count--
+    },
+    addCount () {
+      console.log(this.$store)
+    },
+    minusCount () {
+      console.log(this.$store)
     }
   }
 }
