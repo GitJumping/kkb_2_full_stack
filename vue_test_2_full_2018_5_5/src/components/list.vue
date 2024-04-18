@@ -76,8 +76,13 @@ export default {
     }
   },
    */
-  // 使用fetch请求数据
-  // },
+  async mounted () {
+    // 使用fetch请求数据
+    // 原生 js 提供的改进版ajax解决方案，需要调用两次 await
+    let res = await (await fetch(`http://localhost:8081/list`)).json()
+    console.log('fetch mounted', res)
+    this.items = res
+  },
   components: {ListItem},
   methods: {
     plusOne () {
