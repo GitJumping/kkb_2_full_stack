@@ -24,14 +24,24 @@ export default {
     //   {name: '7', price: '8', sales: '9'},
     //   {name: '10', price: '11', sales: '12'}
     // ],
-      items: this.$store.state.arr
+      // items: this.$store.state.arr
     }
   },
-  mounted () {
+  async mounted () {
     // 使用vuex getter 触发读取，这里注释掉
-    // this.$store.dispatch('loadAttr')
+    // vuex全局状态管理-1，这里async有没有都ok
+    this.$store.dispatch('loadAttr')
   },
   components: {ListItem},
+  computed: {
+    // 不是一个实在的值，虚拟出来的，内部是一个函数
+    // 什么时候数据变了，什么时候函数会执行，起到缓存作用
+    // vuex经常和computed配合起来用，尤其是涉及到数据交互；另一个是需要有地方去触发vuex的actions函数
+    // computed兼容mutations的两种赋值
+    items () {
+      return this.$store.state.arr
+    }
+  },
   methods: {
     plusOne () {
       this.count++
