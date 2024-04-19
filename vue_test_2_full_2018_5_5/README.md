@@ -27,4 +27,15 @@ npm run e2e
 npm test
 ```
 
+
+``` bash
+# install dependencies
+# yarn 管理
+yarn install
+
+# vue2 vuex安装指定版本
+yarn remove vuex
+yarn add vuex@3.0.1
+```
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

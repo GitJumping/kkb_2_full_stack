@@ -6,6 +6,7 @@
       <span>月售：{{ data.sales }}</span>
       <input type="button" value="+1" @click="addOne"/>
       <input type="button" value="-1" @click="minusOne"/>
+      <span>获取计数->[{{ getCount }}]</span>
     </li>
   </div>
 </template>
@@ -33,6 +34,12 @@ export default {
     },
     minusOne () {
       this.$store.dispatch('minusCount', 4)
+    }
+  },
+  computed: {
+    // 1.直接从根实例获取 vuex的数据
+    getCount () {
+      return this.$store.state.count
     }
   },
   watch: {
