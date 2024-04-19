@@ -1,0 +1,10 @@
+{
+  "name": "vue_test_2_full_2018_5_8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "koa": "^2.15.3",
+    "koa-router": "^12.0.1"
+  }
+}

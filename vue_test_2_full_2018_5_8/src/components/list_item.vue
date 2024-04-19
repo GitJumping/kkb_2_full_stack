@@ -1,0 +1,53 @@
+<template lang="html">
+  <div>
+    <li>
+      <h3><input type="checkbox" value="请选择" name="" v-model="checkeding">{{ data.name }}</h3>
+      <span>￥{{ data.price }}</span>
+      <span>月售：{{ data.sales }}</span>
+      <input type="button" value="+1" @click="addOne"/>
+      <input type="button" value="-1" @click="minusOne"/>
+      <span>获取计数->[{{ getCount }}]</span>
+    </li>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      checkeding: false,
+      data: {},
+      state: this.$store.state
+    }
+  },
+  mounted () { // 钩子——事件
+    // 钩子能组织事件
+    // console.log(this.$attrs)
+    // this.txt = this.$attrs['str']
+    this.data = this.$attrs.item
+    console.log('list_item mounted this', this.data)
+    // console.log('list_item mounted this', this.$store)
+  },
+  methods: {
+    addOne () {
+      this.$store.dispatch('addCount', 2)
+    },
+    minusOne () {
+      this.$store.dispatch('minusCount', 4)
+    }
+  },
+  computed: {
+    // 1.直接从根实例获取 vuex的数据
+    getCount () {
+      return this.$store.state.count
+    }
+  },
+  watch: {
+    // 1
+  }
+}
+</script>
+
+<style lang="css">
+
+</style>
