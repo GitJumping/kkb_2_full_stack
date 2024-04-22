@@ -1,7 +1,7 @@
 <!-- 我的页面 -->
 <template lang='html'>
   <div id=“index_list” class="list_con">
-    <span >加载中..........</span>
+    <span v-if="loadig">加载中..........</span>
     <div class="kr_tab">
       <div class="kr_tab_box">
         <div class="kr_tab_wapper" style="width: auto; position: relative; left: 0px;">
@@ -88,6 +88,9 @@ export default {
   computed: {
     items () {
       return this.$store.getters.list_data
+    },
+    loading () {
+      return this.$store.state.loadig
     }
   },
   // 监控data中的数据变化
