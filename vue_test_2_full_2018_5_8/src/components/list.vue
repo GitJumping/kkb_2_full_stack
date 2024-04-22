@@ -49,6 +49,7 @@ export default {
     // 2. 从getters获取值，getters是同步的场景
     items () {
       // getters.arr 看起来像属性，但实际是个函数
+      // getters作用更多体现在省去mounted里面调用的那一句话
       let res = this.$store.getters.arr
       // console.log(res)
       return res

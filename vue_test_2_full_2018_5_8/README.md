@@ -36,6 +36,8 @@ yarn install
 # vue2 vuex安装指定版本
 yarn remove vuex
 yarn add vuex@3.0.1
+
+# 本项目，和 vue_test_2_full_2018_5_8_server 搭配使用
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
