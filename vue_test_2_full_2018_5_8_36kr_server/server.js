@@ -29,7 +29,8 @@ server.use((req, res, next)=>{
 
 server.get('/list', (req, res)=>{
   let page=parseInt(req.query['page']||0);
-  let page_size=8;
+  let page_size=3;
+  console.log('page*page_size', page*page_size, '(page+1)*page_size', (page+1)*page_size);
 
   let arr=datas.slice(page*page_size, (page+1)*page_size).map(item=>{
     return {
@@ -47,6 +48,7 @@ server.get('/list', (req, res)=>{
     };
   });
 
+  console.log('arr.length->', arr.length);
   res.send(arr);
 });
 

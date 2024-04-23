@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/valid-v-for -->
 <!-- 我的页面 -->
 <template lang='html'>
   <li>
@@ -34,8 +33,7 @@
         <div class="tags-list">
           <i class="icon-tag">
           </i>
-          <span v-for="json,index in data.catalogs" :key="json.name">
-          <!-- <span v-for="json,index in data.catalogs" :key="json.href"></span> -->
+          <span v-for="(json,index) in data.catalogs" :key="index">
             <a :href="json.href">{{ json.name }}</a>
             <span id="singleT" v-if="index<data.catalogs.length -1">，</span>
           </span>
@@ -99,9 +97,21 @@ export default {
       return `http://localhost:8090/img?src=${data}`
     },
     mkTime (t) {
-      let oDate = new Date(t)
-      // console.log(t)
-      return `${oDate.getFullYear()}-${oDate.getMonth() + 1}-${oDate.getDate()}`
+      let now = Date.now()
+      let diff = Math.floor((now - t) / 1000)
+      if (diff < 60) {
+        return '现在'
+      } else if (diff < 3600) {
+        return Math.floor(diff / 1000) + '分钟前'
+      } else if (diff < 86400) {
+        return Math.floor(diff / 3600) + '小时前'
+      } else if (diff < 86400 * 30) {
+        return Math.floor(diff / 86400) + '天前'
+      } else {
+        let oDate = new Date(t)
+        // console.log(t)
+        return `${oDate.getFullYear()}-${oDate.getMonth() + 1}-${oDate.getDate()}`
+      }
     }
   },
   // 方法集合

@@ -59,8 +59,8 @@
               </ul>
             </div>
           </div>
-          <div class="loading_more" @click="loadMore">
-            浏览更多
+          <div class="loading_more" @click="clickLoadMore">
+            {{loadMore?'正在加载':'加载更多'}}
             <span class="icon-arrow-right"></span>
           </div>
         </div>
@@ -86,6 +86,9 @@ export default {
   },
   // 监听属性 类似于data概念
   computed: {
+    loadMore () {
+      return this.$store.state.loading_more
+    },
     items () {
       return this.$store.getters.list_data
     },
@@ -112,8 +115,8 @@ export default {
   activated () { }, // 如果页面有keep-alive缓存功能，这个函数会触发
   // 方法集合
   methods: {
-    loadMore () {
-      // this.$store.dispatch()
+    clickLoadMore () {
+      this.$store.dispatch('loadOneMorePage')
     }
   }
 }

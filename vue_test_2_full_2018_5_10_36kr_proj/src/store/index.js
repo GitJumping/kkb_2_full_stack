@@ -6,13 +6,23 @@ import Artical from './artical'
 
 Vue.use(Vuex)
 
+// 演示代码
+function sleep (sec) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+    }, sec * 1000)
+  })
+}
+
 // 请求数据，和数据状态改变，修改
 const store = new Vuex.Store({
   strict: true, // 严格模式--只能由 mutation 修改状态
   state: {
     artical_list: [],
     cuurPage: 0,
-    loading: false
+    loading: false,
+    loading_more: false
   },
   mutations: {
     startLoading (state) {
@@ -26,6 +36,12 @@ const store = new Vuex.Store({
     },
     addPage (state, arg) {
       state.cuurPage++
+    },
+    startLoadingMore (state) {
+      state.loading_more = true
+    },
+    endLoadingMore (state) {
+      state.loading_more = false
     }
   },
   actions: {
@@ -33,8 +49,11 @@ const store = new Vuex.Store({
       console.log('cuurpage', state.cuurPage)
       // 页面遮罩的设计思路
       commit('startLoading')
+      commit('startLoadingMore')
+      await sleep(3)
       let data = await (await fetch(`http://localhost:8090/list?page=${state.cuurPage}`)).json()
       commit('endLoading')
+      commit('endLoadingMore')
       commit('appendArticalList', data)
       commit('addPage')
     }

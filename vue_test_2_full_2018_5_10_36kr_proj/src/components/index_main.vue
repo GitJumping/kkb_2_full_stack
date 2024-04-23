@@ -11,7 +11,7 @@
               <div class="slick-list draggable">
                 <div class="slick-track" style="opacity: 1; width: 4482px;">
                   <div class="banner_cell radius has_title slick-slide" style="width: 747px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear;">
-                    <a href="#" style="background-image: url(img/banner1.jpg);"></a>
+                    <a href="#" style="background-image: url(../../static/img/banner1.jpg);"></a>
                     <div class="info">
                       <div class="abstract">
                         巨头决战3公里生活圈：它会是2018零售业的主战场吗？
@@ -19,7 +19,7 @@
                     </div>
                   </div>
                   <div class="banner_cell radius has_title slick-slide" style="width: 747px; position: relative; left: -747px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear;">
-                    <a href="#" style="background-image: url(img/banner2.jpg);"></a>
+                    <a href="#" style="background-image: url(../../static/img/banner2.jpg);"></a>
                     <div class="mark_box">
                       <span class="mark">
                         广告
@@ -32,7 +32,7 @@
                     </div>
                   </div>
                   <div class="banner_cell radius has_title slick-slide" style="width: 747px; position: relative; left: -1494px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear;">
-                    <a href="#" style="background-image: url(img/banner3.jpg);"></a>
+                    <a href="#" style="background-image: url(../../static/img/banner3.jpg);"></a>
                     <div class="info">
                       <div class="abstract">
                         趣头条，在巨头曾经忽视的下沉市场狂奔
@@ -40,7 +40,7 @@
                     </div>
                   </div>
                   <div class="banner_cell radius has_title slick-slide" style="width: 747px; position: relative; left: -2241px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear;">
-                    <a href="#" style="background-image: url(img/banner4.jpg);"></a>
+                    <a href="#" style="background-image: url(../../static/img/banner4.jpg);"></a>
                     <div class="info">
                       <div class="abstract">
                         中国独角兽报告：周期短、创新强、爆发集中，为什么这么牛？
@@ -48,7 +48,7 @@
                     </div>
                   </div>
                   <div class="banner_cell radius has_title slick-slide" style="width: 747px; position: relative; left: -2988px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear;">
-                    <a href="#" style="background-image: url(img/banner5.jpg);"></a>
+                    <a href="#" style="background-image: url(../../static/img/banner5.jpg);"></a>
                     <div class="info">
                       <div class="abstract">
                         今日值得看——36氪全天热度文章
@@ -57,7 +57,7 @@
                   </div>
                   <div class="banner_cell radius has_title slick-slide slick-current slick-active"
                   style="width: 747px; position: relative; left: -3735px; top: 0px; z-index: 999; opacity: 1;">
-                    <a href="#" style="background-image: url(img/banner6.jpg);"></a>
+                    <a href="#" style="background-image: url(../../static/img/banner6.jpg);"></a>
                     <div class="info">
                       <div class="abstract">
                         无人驾驶、免费乘坐，硅谷的出租车行业要变天了
@@ -109,7 +109,7 @@
                 <div class="space_cell"></div>
                 <div>
                   <a href="#">
-                    <img src="static/img/heading2.jpg" alt="标题">
+                    <img src="../../static/img/heading2.jpg" alt="标题">
                   </a>
                   <div class="des am-text-break">
                     <a href="#">
@@ -122,7 +122,7 @@
                 <div class="space_cell"></div>
                 <div>
                   <a href="#">
-                    <img src="static/img/heading2.jpg" alt="标题">
+                    <img src="../../static/img/heading2.jpg" alt="标题">
                   </a>
                   <div class="des am-text-break">
                     <a href="#">
@@ -135,7 +135,7 @@
                 <div class="space_cell"></div>
                 <div>
                   <a href="#">
-                    <img src="static/img/heading2.jpg" alt="标题">
+                    <img src="../../static/img/heading2.jpg" alt="标题">
                   </a>
                   <div class="des am-text-break">
                     <a href="#">
@@ -152,19 +152,19 @@
                   <div class="cell slick-slide slick-current slick-active"
                   style="width: 0px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
                     <a href="#">
-                      <img src="static/img/heading1_sm.jpg" alt="标题">
+                      <img src="../../static/img/heading1_sm.jpg" alt="标题">
                       <span>标题标题标题标题标题标题标题标题</span>
                     </a>
                   </div>
                   <div class="cell slick-slide" style="width: 0px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear;">
                     <a href="#">
-                      <img src="static/img/heading2_sm.jpg" alt="标题">
+                      <img src="../../static/img/heading2_sm.jpg" alt="标题">
                       <span>标题标题标题标题标题标题标题标题</span>
                     </a>
                   </div>
                   <div class="cell slick-slide" style="width: 0px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear;">
                     <a href="#">
-                      <img src="static/img/heading3_sm.jpg" alt="标题">
+                      <img src="../../static/img/heading3_sm.jpg" alt="标题">
                       <span>标题标题标题标题标题标题标题标题</span>
                     </a>
                   </div>

@@ -48,4 +48,10 @@ getImageUrl (data) {
     {{ 12|aaa }}
 ```
 
+# v-for 写法
+vue_test_2_full_2018_5_10_36kr_proj/src/components/index_list.vue
+```html
+<span v-for="(json,index) in data.catalogs" :key="index"></span>
+```
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
