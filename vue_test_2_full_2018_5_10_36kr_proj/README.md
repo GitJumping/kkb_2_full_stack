@@ -25,16 +25,27 @@ npm run e2e
 
 # run all tests
 npm test
-
+```
 
 # 图片的请求方式
+```html
 <img alt="标题" class="load-img fade" :src="getImageUrl(data.src)" >
 getImageUrl (data) {
     // http://localhost:8090/img?src=0fyj7svry8kn0zou.jfif
     // console.log('index_list_item->', data)
     return `http://localhost:8090/img?src=${data}`
 }
+```
 
+# 时间戳的毫秒计算
+```html
+<span class="time" :title="mkTime(data.time*1000)">{{mkTime(data.time*1000)}}</span>
+```
+
+# 过滤，或者转换
+```html
+<!--要转换的内容|过滤器/转换器-->
+    {{ 12|aaa }}
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

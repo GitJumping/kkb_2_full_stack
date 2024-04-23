@@ -1,13 +1,17 @@
+<!-- eslint-disable vue/valid-v-for -->
 <!-- 我的页面 -->
 <template lang='html'>
   <li>
+    <!--要转换的内容|过滤器/转换器-->
+    <!-- {{ 12|aaa }} -->
     <div class="am-cf inner_li inner_li_abtest">
       <span class="undefined mark h5_mark">{{ data.tag }}</span>
       <a href="#">
         <div class="img_box list-img-loaded">
           <div>
             <!-- bind属性里面，传递参数的写法 -->
-            <img alt="标题" class="load-img fade" :src="getImageUrl(data.src)" >
+            <!-- <img alt="标题" class="load-img fade" :src="getImageUrl(data.src)" > -->
+            <img alt="标题" class="load-img fade" :src="data.src|getImageUrl" >
           </div>
           <span class=" undefined mark pc_mark">{{ data.tag }}</span>
         </div>
@@ -23,20 +27,21 @@
             <span class="oblique_line">·</span>
           </div>
           <div class="time-div">
-            <span class="time" title="时间">时间</span>
-            <span class="time h5_time">时间</span>
+            <span class="time" :title="data.time*1000|mkTime">{{data.time*1000|mkTime}}</span>
+            <span class="time h5_time">时间 {{data.time*1000|mkTime}}</span>
           </div>
         </div>
         <div class="tags-list">
           <i class="icon-tag">
           </i>
-          <span>
-            <a href="/tags/jinrong">标签1</a>
-            <span>，</span>
+          <span v-for="json,index in data.catalogs" :key="json.name">
+          <!-- <span v-for="json,index in data.catalogs" :key="json.href"></span> -->
+            <a :href="json.href">{{ json.name }}</a>
+            <span id="singleT" v-if="index<data.catalogs.length -1">，</span>
           </span>
-          <span>
+          <!-- <span>
             <a href="/tags/touzi">标签2</a>
-          </span>
+          </span> -->
         </div>
         <div class="comments-list">
           <span class="comments">
@@ -82,13 +87,25 @@ export default {
   beforeDestroy () { }, // 生命周期 - 销毁之前
   destroyed () { }, // 生命周期 - 销毁完成
   activated () { }, // 如果页面有keep-alive缓存功能，这个函数会触发
-  // 方法集合
-  methods: {
+  // 工具类操作
+  filters: {
+    aaa (input) {
+      // alert(input)
+      return input + 5
+    },
     getImageUrl (data) {
       // http://localhost:8090/img?src=0fyj7svry8kn0zou.jfif
       // console.log('index_list_item->', data)
       return `http://localhost:8090/img?src=${data}`
+    },
+    mkTime (t) {
+      let oDate = new Date(t)
+      // console.log(t)
+      return `${oDate.getFullYear()}-${oDate.getMonth() + 1}-${oDate.getDate()}`
     }
+  },
+  // 方法集合
+  methods: {
   }
 }
 </script>

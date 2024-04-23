@@ -1,6 +1,8 @@
 <!-- 我的页面 -->
 <template>
   <div id=“index_vue” class='my_page'>
+    <!-- 用户名：{{ user }}，年龄{{ age }} -->
+    <!-- <input type="button" value="设置年龄" @click="fn"/> -->
     <IncHeader/>
       <div class="index_36kr">
         <div class="pagewrap">
@@ -36,7 +38,14 @@ export default {
     }
   },
   // 监听属性 类似于data概念
-  computed: {},
+  computed: {
+    user () {
+      return this.$store.state.user.name
+    },
+    age () {
+      return this.$store.state.user.age
+    }
+  },
   // 监控data中的数据变化
   watch: {},
   // 生命周期 - 创建完成（可以访问当前this实例）
@@ -45,7 +54,8 @@ export default {
   },
   // 生命周期 - 挂载完成（可以访问DOM元素）
   mounted () {
-
+    // 自动带出，module里面各个模块各自的state属性
+    // console.log('index', this.$store.state)
   },
   beforeCreate () { }, // 生命周期 - 创建之前
   beforeMount () { }, // 生命周期 - 挂载之前
@@ -56,7 +66,9 @@ export default {
   activated () { }, // 如果页面有keep-alive缓存功能，这个函数会触发
   // 方法集合
   methods: {
-
+    fn () {
+      this.$store.dispatch('setAge', 4)
+    }
   }
 }
 </script>

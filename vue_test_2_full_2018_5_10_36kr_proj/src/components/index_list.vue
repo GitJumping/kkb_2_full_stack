@@ -1,7 +1,7 @@
 <!-- 我的页面 -->
 <template lang='html'>
   <div id=“index_list” class="list_con">
-    <span v-if="loadig">加载中..........</span>
+    <span v-if="loading">加载中..........</span>
     <div class="kr_tab">
       <div class="kr_tab_box">
         <div class="kr_tab_wapper" style="width: auto; position: relative; left: 0px;">
@@ -59,7 +59,7 @@
               </ul>
             </div>
           </div>
-          <div class="loading_more">
+          <div class="loading_more" @click="loadMore">
             浏览更多
             <span class="icon-arrow-right"></span>
           </div>
@@ -90,7 +90,7 @@ export default {
       return this.$store.getters.list_data
     },
     loading () {
-      return this.$store.state.loadig
+      return this.$store.state.loading
     }
   },
   // 监控data中的数据变化
@@ -112,7 +112,9 @@ export default {
   activated () { }, // 如果页面有keep-alive缓存功能，这个函数会触发
   // 方法集合
   methods: {
-
+    loadMore () {
+      // this.$store.dispatch()
+    }
   }
 }
 </script>

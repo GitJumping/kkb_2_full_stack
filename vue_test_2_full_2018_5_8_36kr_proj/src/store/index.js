@@ -31,7 +31,6 @@ const store = new Vuex.Store({
       commit('startLoading')
       let data = await (await fetch(`http://localhost:8090/list?page=${state.cuurPage}`)).json()
       commit('endLoading')
-      
       commit('appendArticalList', data)
       commit('addPage')
     }
