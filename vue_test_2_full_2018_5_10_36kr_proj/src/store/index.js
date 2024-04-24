@@ -22,7 +22,8 @@ const store = new Vuex.Store({
     artical_list: [],
     cuurPage: 0,
     loading: false,
-    loading_more: false
+    loading_more: false,
+    article_data: {}
   },
   mutations: {
     startLoading (state) {
@@ -42,6 +43,9 @@ const store = new Vuex.Store({
     },
     endLoadingMore (state) {
       state.loading_more = false
+    },
+    setArticleData (state, arg) {
+      state.article_data = arg
     }
   },
   actions: {
@@ -56,6 +60,13 @@ const store = new Vuex.Store({
       commit('endLoadingMore')
       commit('appendArticalList', data)
       commit('addPage')
+    },
+    async loadArticle ({commit}, arg) {
+      // 5127611
+      // console.log(arg)
+      let articleDetail = await (await fetch(`http://localhost:8090/detail?id=${arg}`)).json()
+      // console.log(articleDetail)
+      commit('setArticleData', articleDetail)
     }
   },
   getters: {
@@ -65,6 +76,9 @@ const store = new Vuex.Store({
       }
       return state.artical_list
     }
+    // article (state, arg) {
+    //   return state.artical_data
+    // }
   },
   // 1. 数据分隔
   // 2. mutations actions可以同名，同时被触发

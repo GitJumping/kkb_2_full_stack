@@ -14,7 +14,7 @@ export default new Router({
       component: Index
     },
     {
-      // http://localhost:8080/#/detail/id=5127611
+      // http://localhost:8080/#/detail/5127611
       path: '/detail/:id/',
       name: 'detail',
       component: Detail

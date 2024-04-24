@@ -54,4 +54,13 @@ vue_test_2_full_2018_5_10_36kr_proj/src/components/index_list.vue
 <span v-for="(json,index) in data.catalogs" :key="index"></span>
 ```
 
+# 实在是异步加载的数据，但是又需要代码里引用返回报文参数，用 v-if 做一下判断控制
+vue_test_2_full_2018_5_10_36kr_proj/src/components/article_main.vue
+vue_test_2_full_2018_5_10_36kr_proj/src/components/article_right.vue
+```html
+<div class="mainlib" v-if="article">
+<div class="mainlib" v-if="(article && article.article)">
+<div class="rightlib cover_css" v-if="article">
+```
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

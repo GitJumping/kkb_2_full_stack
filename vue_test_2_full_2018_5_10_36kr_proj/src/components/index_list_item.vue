@@ -5,7 +5,8 @@
     <!-- {{ 12|aaa }} -->
     <div class="am-cf inner_li inner_li_abtest">
       <span class="undefined mark h5_mark">{{ data.tag }}</span>
-      <a href="#">
+      <!-- <a href="#"> -->
+      <router-link :to="{name: 'detail', params:{'id':data.id}}">
         <div class="img_box list-img-loaded">
           <div>
             <!-- bind属性里面，传递参数的写法 -->
@@ -18,7 +19,8 @@
           <h3>{{ data.title }}</h3>
           <div class="abstract">{{ data.summary }}</div>
         </div>
-      </a>
+      </router-link>
+      <!-- </a> -->
       <div class="info">
         <div class="info-list info-list-abtest">
           <div class="user-info">
@@ -33,7 +35,8 @@
         <div class="tags-list">
           <i class="icon-tag">
           </i>
-          <span v-for="(json,index) in data.catalogs" :key="index">
+          <!-- <span v-for="(json,index) in data.catalogs" :key="index"> -->
+            <span v-for="(json) in data.catalogs" :key="json.href">
             <a :href="json.href">{{ json.name }}</a>
             <span id="singleT" v-if="index<data.catalogs.length -1">，</span>
           </span>
