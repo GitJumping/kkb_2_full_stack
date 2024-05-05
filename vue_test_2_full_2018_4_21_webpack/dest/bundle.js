@@ -70,11 +70,10 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mod1_js__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mod1_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mod1_js__);
 // SyntaxError: Cannot use import statement outside a module
 // 直接执行报错，node不认 import
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js___default.a)
+console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a" /* default */])
 // let p = new modd1('Arry', 30)
 // p.show()
 
@@ -86,17 +85,18 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js___default.a)
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 // require.js
 // require 是 node.js 的模块
 /*
 也可以直接exports
 */
-exports.a = 12;
+// exports.a = 12;
 
 // default 表示导出整个模块
-// export default 12;
+/* harmony default export */ __webpack_exports__["a"] = (12);
 
 // export 输出一个类
 // export default class {

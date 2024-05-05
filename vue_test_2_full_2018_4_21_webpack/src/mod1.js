@@ -3,10 +3,10 @@
 /*
 也可以直接exports
 */
-exports.a = 12;
+// exports.a = 12;
 
 // default 表示导出整个模块
-// export default 12;
+export default 12;
 
 // export 输出一个类
 // export default class {
