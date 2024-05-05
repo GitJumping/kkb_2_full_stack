@@ -1,9 +1,9 @@
 // SyntaxError: Cannot use import statement outside a module
 // 直接执行报错，node不认 import
 import modd1 from './mod1.js'
-console.log(modd1)
-// let p = new modd1('Arry', 30)
-// p.show()
+// console.log(modd1)
+let p = new modd1('Arry', 30)
+p.show()
 
 // import {a,b} from './mod1.js'
 // console.log(a,b)

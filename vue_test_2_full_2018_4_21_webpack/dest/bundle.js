@@ -73,9 +73,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // SyntaxError: Cannot use import statement outside a module
 // 直接执行报错，node不认 import
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a" /* default */])
-// let p = new modd1('Arry', 30)
-// p.show()
+// console.log(modd1)
+let p = new __WEBPACK_IMPORTED_MODULE_0__mod1_js__["a" /* default */]('Arry', 30)
+p.show()
 
 // import {a,b} from './mod1.js'
 // console.log(a,b)
@@ -96,18 +96,18 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a" /* default */])
 // exports.a = 12;
 
 // default 表示导出整个模块
-/* harmony default export */ __webpack_exports__["a"] = (12);
+// export default 12;
 
 // export 输出一个类
-// export default class {
-//     constructor(name, age){
-//         this.name = name;
-//         this.age = age;
-//     }
-//     show(){
-//         console.log(`${this.name}, ${this.age}`);
-//     }
-// }
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    show(){
+        console.log(`${this.name}, ${this.age}`);
+    }
+});
 
 // export let a=10;
 // export let b=28;
