@@ -9,15 +9,15 @@
 // export default 12;
 
 // export 输出一个类
-export default class {
-    constructor(name, age){
-        this.name = name;
-        this.age = age;
-    }
-    show(){
-        console.log(`${this.name}, ${this.age}`);
-    }
-}
+// export default class {
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     show(){
+//         console.log(`${this.name}, ${this.age}`);
+//     }
+// }
 
-// export let a=10;
-// export let b=28;
+export let a=10;
+export let b=28;

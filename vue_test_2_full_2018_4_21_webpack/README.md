@@ -29,3 +29,17 @@ webpack --config webpack2.config.js
 node dest/bundle.js
 ```
 
+### 第四种 export let var
+vue_test_2_full_2018_4_21_webpack/src/mod1.js
+vue_test_2_full_2018_4_21_webpack/src/1.js
+``` bash
+webpack --config webpack2.config.js
+node dest/bundle.js
+```
+
+
+
+
+
+
+

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -68,26 +68,8 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mod1_js__ = __webpack_require__(1);
-// SyntaxError: Cannot use import statement outside a module
-// 直接执行报错，node不认 import
-
-// console.log(modd1)
-let p = new __WEBPACK_IMPORTED_MODULE_0__mod1_js__["a" /* default */]('Arry', 30)
-p.show()
-
-// import {a,b} from './mod1.js'
-// console.log(a,b)
-
-// import {a as var_a, b as var_b} from './mod1.js'
-// console.log(var_a, var_b)
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return a; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return b; });
 // require.js
 // require 是 node.js 的模块
 /*
@@ -99,18 +81,38 @@ p.show()
 // export default 12;
 
 // export 输出一个类
-/* harmony default export */ __webpack_exports__["a"] = (class {
-    constructor(name, age){
-        this.name = name;
-        this.age = age;
-    }
-    show(){
-        console.log(`${this.name}, ${this.age}`);
-    }
-});
+// export default class {
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     show(){
+//         console.log(`${this.name}, ${this.age}`);
+//     }
+// }
 
-// export let a=10;
-// export let b=28;
+let a=10;
+let b=28;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mod1_js__ = __webpack_require__(0);
+// SyntaxError: Cannot use import statement outside a module
+// 直接执行报错，node不认 import
+// import modd1 from './mod1.js'
+// console.log(modd1)
+// let p = new modd1('Arry', 30)
+// p.show()
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a"],__WEBPACK_IMPORTED_MODULE_0__mod1_js__["b"])
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a"], __WEBPACK_IMPORTED_MODULE_0__mod1_js__["b"])
 
 /***/ })
 /******/ ]);
