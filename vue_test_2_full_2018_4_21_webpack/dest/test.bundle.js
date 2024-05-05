@@ -60,33 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mod1_js__ = __webpack_require__(3);
-// SyntaxError: Cannot use import statement outside a module
-// 直接执行报错，node不认 import
-// import modd1 from './mod1.js'
-// console.log(modd1)
-// let p = new modd1('Arry', 30)
-// p.show()
-
-// import {a,b} from './mod1.js'
-// console.log(a,b)
-
-
-console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a"], __WEBPACK_IMPORTED_MODULE_0__mod1_js__["b"])
-
-/***/ }),
-/* 3 */
+/* 0 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115,6 +93,28 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a"], __WEBPACK_IMPORTED_MODU
 
 let a=10;
 let b=28;
+
+/***/ }),
+/* 1 */,
+/* 2 */,
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mod1_js__ = __webpack_require__(0);
+// SyntaxError: Cannot use import statement outside a module
+// 直接执行报错，node不认 import
+// import modd1 from './mod1.js'
+// console.log(modd1)
+// let p = new modd1('Arry', 30)
+// p.show()
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a"],__WEBPACK_IMPORTED_MODULE_0__mod1_js__["b"])
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_0__mod1_js__["a"], __WEBPACK_IMPORTED_MODULE_0__mod1_js__["b"])
 
 /***/ })
 /******/ ]);

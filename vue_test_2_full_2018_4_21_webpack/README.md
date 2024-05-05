@@ -37,6 +37,11 @@ webpack --config webpack2.config.js
 node dest/bundle.js
 ```
 
+### 多entry 多filename
+vue_test_2_full_2018_4_21_webpack/src/index.html
+``` bash
+webpack --config webpack2.config.js
+```
 
 
 
