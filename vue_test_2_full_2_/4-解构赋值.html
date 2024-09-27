@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href=""/>
+        <link rel="script" href=""/>
+        <script type=text/javascript src=""></script>
+        <script>
+            window.onload = function(){
+                let aBtn = document.getElementsByTagName('input');
+
+                // for(let i=0; i<aBtn.length; i++){
+                //     aBtn[i].onclick = function(){
+                //         alert(i);
+                //     }
+                // }
+
+                for(var i=0; i<aBtn.length; i++){
+                    // var 函数级别作用域
+                    // 闭包，把变量限制在函数作用域内
+                    (function(i){
+                        aBtn[i].onclick = function(){
+                            alert(i);
+                        }
+                    })(i);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="button" value="1"/>
+        <input type="button" value="2"/>
+        <input type="button" value="3"/>
+    </body>
+</html>
